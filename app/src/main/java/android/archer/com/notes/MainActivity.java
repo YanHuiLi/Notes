@@ -26,7 +26,7 @@ public class MainActivity extends ListActivity {
         adapter = new SimpleCursorAdapter(this, R.layout.notes_list_cell, null, new String[]{NotesDB.COLUMN_NAME_NOTE_NAME, NotesDB.COLUMN_NAME_NOTE_DATE}, new int[]{R.id.tvName, R.id.tvDate});
         setListAdapter(adapter);
 
-         db = new NotesDB(this);
+        NotesDB db = new NotesDB(this);
         dbRead = db.getReadableDatabase();
         refreshNotesListView();
 
@@ -77,7 +77,6 @@ public class MainActivity extends ListActivity {
 
     private SimpleCursorAdapter adapter = null;
     private SQLiteDatabase dbRead;
-    private NotesDB db;
     public static final int REQUEST_CODE_ADD_NOTE = 1;
     public static final int REQUEST_CODE_EDIT_NOTE = 2;
 
